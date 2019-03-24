@@ -65,3 +65,20 @@ void LinkedList::print_list(){
     // print the last traversed node.
     cout<<"The value of node is "<<print->data<<endl;
 }
+
+// function to count nodes in the linkedlist 
+int LinkedList::countNodes(){
+    
+    // initalize a counter 
+    int count = 0;
+
+    // create an alias for the linked list
+    Node *countNodes = this->head;
+
+    // loop in all the nodes of list till end
+    while(countNodes->next != NULL){
+        count++; // increase the counter
+        countNodes = countNodes->next; // update the list 
+    }
+    return count +1; // return th value of the nodes. 
+}

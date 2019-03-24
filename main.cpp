@@ -4,9 +4,9 @@ using namespace std;
 
 int main(){
     LinkedList ll;
-    ll.single_list(20);
-    ll.single_list(15);
+    ll.add_to_single_list(20);
+    ll.add_to_single_list(15);
     // ll.single_list(10);
-    ll.print_list();
+    cout<<ll.countNodes();
     return 0;
 }
