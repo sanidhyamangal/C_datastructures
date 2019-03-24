@@ -15,7 +15,7 @@ LinkedList::~LinkedList()
 {
 }
 
-void LinkedList :: create_list(int value){
+void LinkedList :: create_inital_node(int value){
     // inital values to be declared
     Node *temp;
     temp = new Node();
@@ -29,10 +29,10 @@ void LinkedList :: create_list(int value){
     this->head = temp;
 }
 
-void LinkedList::single_list(int value){
+void LinkedList::add_to_single_list(int value){
     // create a inital node 
     if (this->head == NULL){
-        create_list(value);
+        create_inital_node(value);
     }
     else{
         // intial values for the node 
