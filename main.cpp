@@ -4,6 +4,9 @@ using namespace std;
 
 int main(){
     LinkedList ll;
-    ll.create_list(15);
+    ll.single_list(20);
+    ll.single_list(15);
+    // ll.single_list(10);
+    ll.print_list();
     return 0;
 }

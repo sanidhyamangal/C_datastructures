@@ -8,9 +8,11 @@ struct Node
 class LinkedList
 {
 private:
-    Node *head, *temp;
+    Node *head;
 public:
     LinkedList(/* args */);
     ~LinkedList();
-    void create_list(int data);
+    void create_list(int value);
+    void single_list(int value);
+    void print_list();
 };
