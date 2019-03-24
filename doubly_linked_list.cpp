@@ -32,16 +32,16 @@ void DoubleLinkedList::add_to_list(int value){
     }
 }
 
+// override delete at start fuction 
+void DoubleLinkedList::delete_at_start(){
+    LinkedList::delete_start_element();
+    this->head->prev = NULL;
+}
+
 // function to print list in reversed order 
 void DoubleLinkedList::reverse_print(){
-    Node *print = this->head;
-
-    // complete forward traversal
-    while(print->next != NULL){
-        print = print->next;
-    }
-    
-    // start reverse travelsal
+    // move to last position
+    Node *print = traverse_to_position(countNodes()-1);
     while(print->prev != NULL){
         cout<<"The value of node is "<<print->data<<endl;
         print = print->prev;
