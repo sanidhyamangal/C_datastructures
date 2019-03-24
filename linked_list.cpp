@@ -53,6 +53,15 @@ void LinkedList::add_to_list(int value){
         s->next = temp;
     }
 }
+
+// update a function 
+void LinkedList::update_element(int pos, int value){
+    Node *temp = traverse_to_position(pos);
+
+    // update value of the node at pos 
+    temp->data = value;
+}
+
 // delete start element 
 void LinkedList::delete_start_element(){
     // check wether more than one notes are present or not 
