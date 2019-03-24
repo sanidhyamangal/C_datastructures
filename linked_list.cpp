@@ -11,8 +11,10 @@ LinkedList::LinkedList(/* args */)
     this->head = NULL; // null value to head
 }
 
+// delete the value of list on calling a destructor.
 LinkedList::~LinkedList()
 {
+    this->head = NULL;
 }
 
 void LinkedList :: create_inital_node(int value){

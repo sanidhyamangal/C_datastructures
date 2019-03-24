@@ -17,6 +17,7 @@ public:
     void delete_start_element();
     void delete_at_position(int pos);
     void delete_end_element();
+    void update_element(int pos, int new_value);
     void print_list();
     int countNodes();
 };
