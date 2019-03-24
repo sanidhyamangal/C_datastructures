@@ -7,7 +7,7 @@ struct Node
 
 class LinkedList
 {
-private:
+protected:
     Node *head;
 public:
     LinkedList();
