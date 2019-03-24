@@ -62,6 +62,33 @@ void LinkedList::delete_start_element(){
     }
 }
 
+// delete a node at specific position function 
+void LinkedList::delete_at_position(int pos){
+
+    // if position is 0 then calls delete_start_element function
+    if (pos == 0) {
+        delete_start_element();
+    }
+    // if position in between 0 and num of nodes
+    else if (pos < countNodes() && pos > 0){
+        // initialize some of the local variables
+        Node *start = this->head, *temp;
+        // iterate over a position
+        for(int i = 0; i < pos; i++){
+            temp = start; // n-1 node 
+            start = start->next; // n node
+        }
+        temp->next = start->next; // delete the node in between 
+    }
+    // if node is the last element.
+    else if (pos == countNodes()-1) {
+        delete_end_element();
+    } // if invalid position is given
+    else{
+        cout<<"The position is not avaiable in the list";
+    }
+}
+
 // delete a node from the end of the function 
 void LinkedList::delete_end_element(){
     // check wether more than one node is present or not 
