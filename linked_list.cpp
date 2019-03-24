@@ -51,16 +51,32 @@ void LinkedList::add_to_single_list(int value){
         s->next = temp;
     }
 }
+// delete start element 
+void LinkedList::delete_start_element(){
+    // check wether more than one notes are present or not 
+    if (countNodes() != 0){
+        this->head = this->head->next;
+    }else{
+        // print error message 
+        cout<<"No elements present to delete";
+    }
+}
 
 // delete a node from the end of the function 
 void LinkedList::delete_end_element(){
+    // check wether more than one node is present or not 
     if (countNodes() != 0){
+        // initialize some new temp variables 
         Node *elements = this->head, *temp;
+
+        // traverse all the elements in the list
         while(elements->next != NULL){
             temp = elements;
             elements = elements->next;
         }
+        // delete the element in the last 
         temp->next = NULL;
+        cout<<"Deleted element is "<<temp->data;
     }else{
         cout<<"There are no items in the list to be deleted";
     }
