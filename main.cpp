@@ -16,6 +16,6 @@ int main(){
     dl.add_to_list(36);
     dl.add_to_list(3);
     dl.add_to_list(6);
-    dl.print_list();
+    dl.reverse_print();
     return 0;
 }
