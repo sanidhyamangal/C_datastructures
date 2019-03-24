@@ -52,6 +52,20 @@ void LinkedList::add_to_single_list(int value){
     }
 }
 
+// delete a node from the end of the function 
+void LinkedList::delete_end_element(){
+    if (countNodes() != 0){
+        Node *elements = this->head, *temp;
+        while(elements->next != NULL){
+            temp = elements;
+            elements = elements->next;
+        }
+        temp->next = NULL;
+    }else{
+        cout<<"There are no items in the list to be deleted";
+    }
+}
+
 void LinkedList::print_list(){
     // initialize print instance of the node.
     Node *print = this->head;
@@ -76,9 +90,15 @@ int LinkedList::countNodes(){
     Node *countNodes = this->head;
 
     // loop in all the nodes of list till end
-    while(countNodes->next != NULL){
-        count++; // increase the counter
-        countNodes = countNodes->next; // update the list 
+    if (this->head == NULL){
+        return 0;
+    }else{
+
+        while(countNodes->next != NULL){
+            count++; // increase the counter
+            countNodes = countNodes->next; // update the list 
+        }
+        return count + 1;
     }
-    return count +1; // return th value of the nodes. 
+    // return count > 0 ? count+1 : 0; // return the count value of the nodes. 
 }
