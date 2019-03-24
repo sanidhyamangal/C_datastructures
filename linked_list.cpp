@@ -111,6 +111,18 @@ void LinkedList::delete_end_element(){
     }
 }
 
+// function to traverse at a specific position 
+Node *LinkedList::traverse_to_position(int pos){
+    Node *temp = this->head;
+    if(pos >= 0 && pos < countNodes()){
+        for (int i =0; i < pos ; i++){
+            temp = temp->next;
+        }
+        return temp;
+    }
+    return 0;
+}
+
 void LinkedList::print_list(){
     // initialize print instance of the node.
     Node *print = this->head;
@@ -138,12 +150,10 @@ int LinkedList::countNodes(){
     if (this->head == NULL){
         return 0;
     }else{
-
         while(countNodes->next != NULL){
             count++; // increase the counter
             countNodes = countNodes->next; // update the list 
         }
         return count + 1;
     }
-    // return count > 0 ? count+1 : 0; // return the count value of the nodes. 
 }

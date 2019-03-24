@@ -16,6 +16,7 @@ int main(){
     dl.add_to_list(36);
     dl.add_to_list(3);
     dl.add_to_list(6);
-    dl.reverse_print();
+    Node *test = dl.traverse_to_position(0);
+    cout<<test->data;
     return 0;
 }
