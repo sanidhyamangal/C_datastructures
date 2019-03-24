@@ -13,7 +13,6 @@ LinkedList::LinkedList(/* args */)
 
 LinkedList::~LinkedList()
 {
-    // this->head = NULL;
 }
 
 void LinkedList :: create_list(int value){
@@ -31,38 +30,38 @@ void LinkedList :: create_list(int value){
 }
 
 void LinkedList::single_list(int value){
-    // intializing a temp node for the functions 
     // create a inital node 
     if (this->head == NULL){
         create_list(value);
     }
     else{
+        // intial values for the node 
         Node *temp = new Node();
         Node *s = this->head;
 
         // assign the values of temp 
         temp->data = value;
         temp->next = NULL;
-        
-        cout<<this->head->next;
-        // cout<<s->next<<endl;
+        // loop to traverse to last empty state
         while(s->next != NULL){
-            // cout<<s->next<<endl;
+            // update condition for the loop
             s = s->next;
         }
+        // assign the value of temp to next node
         s->next = temp;
-        // cout<<"Value of s in loop "<<s;
     }
-    
 }
 
 void LinkedList::print_list(){
-    Node *print;
-    print = this->head;
+    // initialize print instance of the node.
+    Node *print = this->head;
 
+    // traverse all the nodes 
     while(print->next != NULL){
+        // print all the available nodes.
         cout<<"The value of node is "<<print->data<<endl;
         print = print->next;
     }
+    // print the last traversed node.
     cout<<"The value of node is "<<print->data<<endl;
 }
