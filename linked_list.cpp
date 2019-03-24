@@ -83,12 +83,10 @@ void LinkedList::delete_at_position(int pos){
     // if position in between 0 and num of nodes
     else if (pos < countNodes() && pos > 0){
         // initialize some of the local variables
-        Node *start = this->head, *temp;
-        // iterate over a position
-        for(int i = 0; i < pos; i++){
-            temp = start; // n-1 node 
-            start = start->next; // n node
-        }
+        Node *start, *temp;
+
+        temp = traverse_to_position(pos-1); // iterate to pos-1 
+        start = traverse_to_position(pos); // iterate to pos 
         temp->next = start->next; // delete the node in between 
     }
     // if node is the last element.

@@ -9,8 +9,8 @@ int main(){
     ll.add_to_list(15);
     ll.add_to_list(10);
     // cout<<ll.countNodes();
-    // ll.delete_at_position(1);
-    ll.update_element(1, 5);
+    ll.delete_at_position(1);
+    // ll.update_element(1, 5);
     ll.print_list();
 
     // DoubleLinkedList dl;
