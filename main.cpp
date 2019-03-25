@@ -2,6 +2,8 @@
 using namespace std;
 // #include "linked_list.h"
 
+#include "circular_linked_list.h"
+
 #include "doubly_linked_list.h"
 int main(){
     // LinkedList ll;
@@ -15,27 +17,27 @@ int main(){
     // ll.update_element(1, 5);
     // ll.print_list();
 
-    DoubleLinkedList dl;
-    dl.add_to_list(36);
-    dl.add_to_list(3);
-<<<<<<< HEAD
-    dl.add_at_start(6);
-    dl.add_to_position(2, 10);
-=======
-    // dl.add_to_list(6);
->>>>>>> refactor
+    // DoubleLinkedList dl;
+    // dl.add_to_list(36);
+    // dl.add_to_list(3);
+    // dl.add_at_start(6);
+    // dl.add_to_position(2, 10);
     // // dl.delete_at_start();
     // // dl.print_list();
     // // dl.delete_end_element();
     // // cout<<endl;
-    dl.print_list();
+    // dl.print_list();
     // dl.delete_at_position(1);
     // cout<<endl;
     // cout<<"reverse order \n";
     // dl.reverse_print();
     // cout<<"\nprint values\n";
-    dl.print_list();
+    // dl.print_list();
     // Node *test = dl.traverse_to_position(0);
     // cout<<test->data;
+
+    CircularLinkedList cl;
+    cl.create_inital_node(10);
+    // cl.print_list();
     return 0;
 }
