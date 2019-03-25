@@ -87,7 +87,9 @@ void LinkedList::delete_at_position(int pos){
 
         temp = traverse_to_position(pos-1); // iterate to pos-1 
         start = traverse_to_position(pos); // iterate to pos 
-        temp->next = start->next; // delete the node in between 
+        temp->next = start->next; // delete the node in between
+        cout<<"Deleted element is "<<start->data;
+        free(start); 
     }
     // if node is the last element.
     else if (pos == countNodes()-1) {
@@ -112,7 +114,8 @@ void LinkedList::delete_end_element(){
         }
         // delete the element in the last 
         temp->next = NULL;
-        cout<<"Deleted element is "<<temp->data;
+        cout<<"Deleted element is "<<elements->data;
+        free(elements); // removes element from the list
     }else{
         cout<<"There are no items in the list to be deleted";
     }
