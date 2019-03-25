@@ -32,6 +32,59 @@ void DoubleLinkedList::add_to_list(int value){
     }
 }
 
+// function to add at starting position of node. 
+void DoubleLinkedList::add_at_start(int value){
+    // initialize and allocate memory to temp node.
+    Node *temp = new Node();
+
+    // assign the values to temp node.
+    temp->data = value;
+    temp->next = this->head;
+    temp->prev = NULL;
+
+    // point prev of head to temp node.
+    this->head->prev = temp;
+    this->head = temp;
+}
+
+// method to add a node at specific postion.
+void DoubleLinkedList::add_to_position(int pos, int value){
+    // if pos is inital 
+    if (pos == 0 ){
+        add_at_start(value); // add at start postion function called.
+    }
+    // if last position supplied.
+    else if (pos == countNodes())
+    {
+        add_to_list(value); // add to list method called.
+    }
+    // if pos b/w 0 and num of nodes
+    else if (pos > 0 && pos < countNodes())
+    {
+        // initalize prev and current position nodes
+        Node *add_prev_position, *add_position;
+        Node *temp = new Node(); // initialize and alloc mem to temp node.
+        // taverse these nodes at certian positon. 
+        add_prev_position = traverse_to_position(pos -1); // traverse to prev position
+        add_position = traverse_to_position(pos); // traverse to specified position
+
+        // assign the values to temp function 
+        temp->data = value;
+        temp->next = add_position;
+        temp->prev = add_prev_position;
+
+        // add noed in main list
+        add_prev_position->next = temp;
+        add_position->prev = temp;
+    }
+    // if invalid range supplied.
+    else
+    {
+        cout<<"Invalid node";
+    }
+    
+}
+
 // override delete at start fuction 
 void DoubleLinkedList::delete_at_start(){
     LinkedList::delete_start_element();
