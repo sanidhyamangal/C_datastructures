@@ -1,3 +1,7 @@
+// aadded a header guard
+#ifndef __DOUBLE_LINKEDLIST__
+#define __DOUBLE_LINKEDLIST__
+
 // import linked_list class 
 #include"linked_list.h"
 
@@ -16,3 +20,5 @@ public:
     void delete_at_start(); // over rides delete at start function of ll
     void delete_at_position(int pos); // overrides delete at position method of LL.
 };
+
+#endif

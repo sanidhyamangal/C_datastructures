@@ -1,3 +1,7 @@
+// added header guard
+#ifndef __LINKEDLIST__
+#define __LINKEDLIST__
+
 struct Node
 {
     int data; 
@@ -25,3 +29,5 @@ public:
     void print_list();
     int countNodes();
 };
+
+#endif
