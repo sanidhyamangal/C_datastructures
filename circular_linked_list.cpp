@@ -28,7 +28,32 @@ void CircularLinkedList::print_list(){
     Node *print = this->head;
 
     while(print->next != head){
-        cout<<"The value of node is "<<print->data;
+        cout<<"The value of node is "<<print->data<<endl;
+        print = print->next;
     }
-    cout<<"The value of node is "<<print->data;  
+    cout<<"The value of node is "<<print->data<<endl;  
+}
+
+// add to list function to push the node at end. 
+void CircularLinkedList::add_to_list(int value){
+    // check if no node is created
+    if (this->head == NULL){
+        create_inital_node(value);
+    }else
+    {
+        // a node to point till last 
+        Node *s = this->head;
+
+        while(s->next != this->head){
+            s = s->next;
+        }
+        
+        // initalize the new node temp 
+        Node *temp = new Node(); 
+        temp->data = value;
+        temp->next = this->head;
+
+        // add node at last 
+        s->next = temp;
+    }
 }
