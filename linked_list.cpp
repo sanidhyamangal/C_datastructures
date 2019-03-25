@@ -39,16 +39,14 @@ void LinkedList::add_to_list(int value){
     else{
         // intial values for the node 
         Node *temp = new Node();
-        Node *s = this->head;
+        Node *s; // s node to point at last position
 
         // assign the values of temp 
         temp->data = value;
         temp->next = NULL;
-        // loop to traverse to last empty state
-        while(s->next != NULL){
-            // update condition for the loop
-            s = s->next;
-        }
+
+        // traverse to last postion of the node.
+        s = traverse_to_position(countNodes()-1);
         // assign the value of temp to next node
         s->next = temp;
     }
