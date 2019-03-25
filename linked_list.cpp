@@ -66,14 +66,30 @@ void LinkedList::add_at_start(int value){
 
 // add node at specific position 
 void LinkedList::add_to_position(int pos, int value){
+    // if at inital postion 
+    if(pos == 0){
+        add_at_start(value);
+    }
     // if postion if last 
-    if (pos == countNodes()-1){
+    else if (pos == countNodes()){
         add_to_list(value); // call add to list value;
     } 
-    // // if at inital postion 
-    // else if(pos == 0){
-    //     exitl
-    // }
+    // if position in between 0 and num of nodes.
+    else if (pos > 0 && pos < countNodes()) {
+        // initializing some important nodes. 
+        Node *add_prev, *add_next;
+
+        Node *temp = new Node(); // memory alloc for the tempnode. 
+        
+        //  traversing to previous and next position.
+        add_prev = traverse_to_position(pos-1);
+        add_next = traverse_to_position(pos);
+        
+        // assign the value to temp node
+        temp->data = value; 
+        add_prev->next = temp; // pointing next of prev node to temp.
+        temp->next = add_next; // pointing next of temp node to node at current pos.
+    }
 }
 
 // update a function 

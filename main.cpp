@@ -7,7 +7,8 @@ int main(){
     LinkedList ll;
     ll.add_to_list(20);
     ll.add_to_list(15);
-    ll.add_at_start(10);
+    // ll.add_to_list(5);
+    ll.add_to_position(0, 10);
     // cout<<ll.countNodes();
     // ll.delete_at_position(1);
     // ll.delete_end_element();
