@@ -14,16 +14,13 @@ void DoubleLinkedList::add_to_list(int value){
         create_inital_node(value);
     }else{
         // initialize the temp value and s value
-        Node *temp = new Node(), *s=this->head;
+        Node *temp = new Node(), *s;
         // assign values to the temp value
         temp->data = value;
         temp->next = NULL;
         
         // traverse till the end of the list 
-        while(s->next !=NULL){
-            s = s->next;
-        }
-
+        s = traverse_to_position(countNodes()-1);
         // assign previous node value to current node
         temp->prev = s;
 
