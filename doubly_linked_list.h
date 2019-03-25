@@ -12,4 +12,5 @@ public:
     void add_to_list(int value); // overrite the add to list function.
     void reverse_print();
     void delete_at_start();
+    void delete_at_position(int pos);
 };

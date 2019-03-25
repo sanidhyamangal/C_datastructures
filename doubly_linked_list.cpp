@@ -38,6 +38,36 @@ void DoubleLinkedList::delete_at_start(){
     this->head->prev = NULL;
 }
 
+// override delete at position function for the doubly list 
+void DoubleLinkedList::delete_at_position(int pos){
+    // call delete at start if pos is 0
+    if (pos == 0){
+        delete_at_start(); // call delete start element;
+    }
+    // delete at end if pos is last node 
+    else if (pos == countNodes() -1) {
+        delete_end_element(); // call delete end element;
+    }
+    // if pos in between 0 and num of nodes 
+    else if (pos > 0 && pos < countNodes()){
+        Node *next, *prev; // to temp nodes
+        prev = traverse_to_position(pos -1); // traverse prev to pos-1 node
+        next = traverse_to_position(pos); // traverse next to pos node
+
+        prev->next = next->next; // point next of prev to next of next.
+        next->next->prev = prev; // point prev of next to next to prev node.
+
+        cout<<"Deleted element is "<<next->data;
+        free(next); // free the next node.
+    }
+    // do nothing if invalid range.
+    else
+    {
+        cout<<"Invalid range";
+    }
+    
+}
+
 // function to print list in reversed order 
 void DoubleLinkedList::reverse_print(){
     // move to last position
