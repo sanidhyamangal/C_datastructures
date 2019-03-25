@@ -57,3 +57,21 @@ void CircularLinkedList::add_to_list(int value){
         s->next = temp;
     }
 }
+
+// function to count number nodes in the list 
+int CircularLinkedList::countNodes(){
+    // if head equal to null 
+    if (this->head == NULL){
+        return 0;
+    }else{
+        // make a count node point at 
+        Node *count = this->head;
+        int _count = 0;
+        // traverse till end.
+        while(count->next != this->head){
+            _count++; // increment count 
+            count = count->next;
+        }
+        return _count +1;
+    }
+}

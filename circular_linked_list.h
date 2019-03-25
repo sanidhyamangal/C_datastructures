@@ -14,6 +14,7 @@ public:
     void create_inital_node(int value); // override the base function
     void print_list(); // override the base function.
     void add_to_list(int value); // function to add at end in circular LL.
+    int countNodes(); // override the count nodes method
 };
 
 #endif
