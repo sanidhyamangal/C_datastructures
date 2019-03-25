@@ -54,6 +54,28 @@ void LinkedList::add_to_list(int value){
     }
 }
 
+// add node at starting position 
+void LinkedList::add_at_start(int value){
+    Node *temp = new Node();
+
+    temp->data = value;
+    temp->next = this->head;
+
+    this->head = temp;
+}
+
+// add node at specific position 
+void LinkedList::add_to_position(int pos, int value){
+    // if postion if last 
+    if (pos == countNodes()-1){
+        add_to_list(value); // call add to list value;
+    } 
+    // // if at inital postion 
+    // else if(pos == 0){
+    //     exitl
+    // }
+}
+
 // update a function 
 void LinkedList::update_element(int pos, int value){
     Node *temp = traverse_to_position(pos);
