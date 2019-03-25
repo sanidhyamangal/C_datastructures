@@ -38,6 +38,6 @@ int main(){
 
     CircularLinkedList cl;
     cl.create_inital_node(10);
-    // cl.print_list();
+    cl.print_list();
     return 0;
 }
