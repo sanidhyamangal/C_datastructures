@@ -18,13 +18,17 @@ int main(){
     DoubleLinkedList dl;
     dl.add_to_list(36);
     dl.add_to_list(3);
+<<<<<<< HEAD
     dl.add_at_start(6);
     dl.add_to_position(2, 10);
+=======
+    // dl.add_to_list(6);
+>>>>>>> refactor
     // // dl.delete_at_start();
     // // dl.print_list();
     // // dl.delete_end_element();
     // // cout<<endl;
-    // // dl.print_list();
+    dl.print_list();
     // dl.delete_at_position(1);
     // cout<<endl;
     // cout<<"reverse order \n";
