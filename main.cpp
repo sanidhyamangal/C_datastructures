@@ -40,8 +40,9 @@ int main(){
     cl.create_inital_node(10);
     cl.add_to_list(15);
     cl.add_to_list(5);
-    // cl.update_element(1, 8);
+    cl.update_element(1, 8);
     // cout<<cl.countNodes();
-    cl.traverse_to_position(1);
+    // cl.traverse_to_position(1);
+    cl.print_list();
     return 0;
 }

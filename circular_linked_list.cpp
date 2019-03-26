@@ -58,10 +58,22 @@ void CircularLinkedList::add_to_list(int value){
     }
 }
 
+// method to update element
+void CircularLinkedList::update_element(int pos, int value){
+    // if postion is in range 
+    if (pos >= 0 and pos < countNodes()){
+        // Init a node and traverse it to pos
+        Node *position = traverse_to_position(pos);
+
+        // assign the value to this node.
+        position->data = value;
+    }
+}
+
 // method to traverse to a position 
 Node *CircularLinkedList::traverse_to_position(int pos){
     // if position is between 0 and num of nodes
-    if (pos < countNodes()){
+    if (pos < countNodes() and pos > 0){
         
         // create a temp node to be travsersed 
         Node *temp = this->head;
