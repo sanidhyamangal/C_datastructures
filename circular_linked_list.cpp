@@ -86,6 +86,34 @@ void CircularLinkedList::delete_at_end(){
     }
 }
 
+// delete at position method implementation
+void CircularLinkedList:: delete_at_position(int pos){
+    // if zero position
+    if(pos == 0){
+        delete_start_element();
+    }
+    // if last postion given 
+    else if (pos == countNodes()-1)
+    {
+        delete_at_end();
+    }
+    // if pos in range of 0 and num of nodes. 
+    else if (pos > 0 and pos < countNodes())
+    {
+        // create an instance of the head list and traverse to given pos. 
+        Node *prev = traverse_to_position(pos -1); // pos -1 
+        Node *next = traverse_to_position(pos); // pos.
+
+        // skip the next node.
+        prev->next = next->next;
+
+        // free the next node.
+        free(next);
+    }
+    
+    
+}
+
 // method to update element
 void CircularLinkedList::update_element(int pos, int value){
     // if postion is in range 
@@ -101,7 +129,7 @@ void CircularLinkedList::update_element(int pos, int value){
 // method to traverse to a position 
 Node *CircularLinkedList::traverse_to_position(int pos){
     // if position is between 0 and num of nodes
-    if (pos < countNodes() and pos > 0){
+    if (pos < countNodes() and pos >= 0){
         
         // create a temp node to be travsersed 
         Node *temp = this->head;
