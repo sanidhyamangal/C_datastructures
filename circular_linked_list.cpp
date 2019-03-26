@@ -58,6 +58,19 @@ void CircularLinkedList::add_to_list(int value){
     }
 }
 
+// override delete at start method.
+void CircularLinkedList::delete_start_element(){
+    // if non zero nodes
+    if (countNodes() > 0){
+    // init a node and point it to last node 
+    Node *last = traverse_to_position(countNodes() -1);
+
+    // point last node to next of head 
+    this->head = this->head->next;
+    last->next = this->head;
+    }
+}
+
 // method to update element
 void CircularLinkedList::update_element(int pos, int value){
     // if postion is in range 
@@ -81,7 +94,6 @@ Node *CircularLinkedList::traverse_to_position(int pos){
         {
             temp = temp->next;
         }
-        cout<<temp->data;
         return temp;
     }
         return NULL;
