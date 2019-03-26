@@ -71,6 +71,21 @@ void CircularLinkedList::delete_start_element(){
     }
 }
 
+// delete element at last 
+void CircularLinkedList::delete_at_end(){
+    // if cout of nodes is non zero 
+    if (countNodes() > 0){
+        // init a node and traverse it to last second node 
+        Node *last_second = traverse_to_position(countNodes()-2);
+
+        // free last node 
+        free(last_second->next);
+
+        // point last second node to head node.
+        last_second->next = this->head;
+    }
+}
+
 // method to update element
 void CircularLinkedList::update_element(int pos, int value){
     // if postion is in range 

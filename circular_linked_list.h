@@ -18,6 +18,7 @@ public:
     void update_element(int pos, int vlaue);
     Node *traverse_to_position(int pos);
     void delete_start_element();
+    void delete_at_end();
 
 };
 
