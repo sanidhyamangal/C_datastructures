@@ -22,6 +22,62 @@ void CircularLinkedList::create_inital_node(int value){
     this->head = temp;
 }
 
+// add to start node method implementation
+
+void CircularLinkedList::add_at_start(int value){
+    // if count of nodes is zero
+    if (countNodes() == 0){
+        create_inital_node(value);
+    }
+    else
+    {
+        // init a temp value to get values 
+        Node *temp = new Node(); 
+
+        // assign the value to node 
+        temp->data = value;
+        temp->next = this->head;
+
+        // point last node to temp node.
+        Node *last = traverse_to_position(countNodes() -1);
+        last->next = temp;
+
+        // add this temp node to head node 
+        this->head = temp;
+    }
+}
+
+// add to position method 
+void CircularLinkedList::add_to_position(int pos, int value){
+    // if position is initial
+    if(pos == 0){
+        add_at_start(value);
+    }
+    // if last position supplied
+    else if (pos == countNodes()-1)
+    {
+        add_to_list(value);
+    }
+    // if range of the node is in between of 0 and num of nodes
+    else if (pos > 0 and pos < countNodes())
+    {
+        // create a new node 
+        Node *temp = new Node();
+
+        // traverse nodes to prev and current position 
+        Node *prev = traverse_to_position(pos -1);
+        Node *current_position = traverse_to_position(pos);
+
+        // assign the values to temp node 
+        temp->data = value;
+        temp->next = current_position;
+
+        // point prev node to new temp node.
+        prev->next = temp;
+    }
+    
+}
+
 // print method for printing files 
 void CircularLinkedList::print_list(){
     // intialize print pointer 

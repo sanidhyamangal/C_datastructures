@@ -37,12 +37,15 @@ int main(){
     // cout<<test->data;
 
     CircularLinkedList cl;
-    cl.create_inital_node(10);
-    cl.add_to_list(15);
-    cl.add_to_list(5);
-    cl.add_to_list(4);
-    cl.update_element(1, 8);
-    cl.delete_at_position(1);
+    // cl.create_inital_node(10);
+    // cl.add_to_list(15);
+    // cl.add_to_list(5);
+    cl.add_at_start(4);
+    cl.add_to_position(0, 10);
+    cl.add_to_position(1, 20);
+    cl.add_to_position(1, 8);
+    // cl.update_element(1, 8);
+    // cl.delete_at_position(1);
     // cout<<cl.countNodes();
     // cl.traverse_to_position(1);
     cl.print_list();
