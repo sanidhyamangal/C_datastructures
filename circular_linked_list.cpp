@@ -58,6 +58,23 @@ void CircularLinkedList::add_to_list(int value){
     }
 }
 
+// method to traverse to a position 
+Node *CircularLinkedList::traverse_to_position(int pos){
+    // if position is between 0 and num of nodes
+    if (pos < countNodes()){
+        
+        // create a temp node to be travsersed 
+        Node *temp = this->head;
+        for(int i = 0; i < pos; i++)
+        {
+            temp = temp->next;
+        }
+        cout<<temp->data;
+        return temp;
+    }
+        return NULL;
+}
+
 // function to count number nodes in the list 
 int CircularLinkedList::countNodes(){
     // if head equal to null 
