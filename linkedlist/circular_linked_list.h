@@ -2,7 +2,7 @@
 #ifndef __CIRCULAR_LINKEDLIST__
 #define __CIRCULAR_LINKEDLIST__
 
-#include "linked_list.h"
+#include "linkedlist/linked_list.h"
 
 class CircularLinkedList: public LinkedList
 {

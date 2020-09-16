@@ -1,11 +1,17 @@
 #include<iostream>
+// #include"linked_list.h"
+#include "linkedlist/circular_linked_list.h"
+
 using namespace std;
-// #include "linked_list.h"
 
-#include "circular_linked_list.h"
 
-#include "doubly_linked_list.h"
+// #include "linkedlist/doubly_linked_list.h"
+// #include "stack/stack.h"
+
 int main(){
+    // Stack<int> baseStack;
+    // baseStack.push(23);
+    // cout << baseStack.return_top();
     // LinkedList ll;
     // ll.add_to_list(20);
     // ll.add_to_list(15);
@@ -22,10 +28,10 @@ int main(){
     // dl.add_to_list(3);
     // dl.add_at_start(6);
     // dl.add_to_position(2, 10);
-    // // dl.delete_at_start();
-    // // dl.print_list();
-    // // dl.delete_end_element();
-    // // cout<<endl;
+    // dl.delete_at_start();
+    // dl.print_list();
+    // dl.delete_end_element();
+    // cout<<endl;
     // dl.print_list();
     // dl.delete_at_position(1);
     // cout<<endl;
@@ -37,17 +43,17 @@ int main(){
     // cout<<test->data;
 
     CircularLinkedList cl;
-    // cl.create_inital_node(10);
-    // cl.add_to_list(15);
-    // cl.add_to_list(5);
+    cl.create_inital_node(10);
+    cl.add_to_list(15);
+    cl.add_to_list(5);
     cl.add_at_start(4);
     cl.add_to_position(0, 10);
     cl.add_to_position(1, 20);
     cl.add_to_position(1, 8);
-    // cl.update_element(1, 8);
-    // cl.delete_at_position(1);
-    // cout<<cl.countNodes();
-    // cl.traverse_to_position(1);
+    cl.update_element(1, 8);
+    cl.delete_at_position(1);
+    cout<<cl.countNodes();
+    cl.traverse_to_position(1);
     cl.print_list();
     return 0;
 }
